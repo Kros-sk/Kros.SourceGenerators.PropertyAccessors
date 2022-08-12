@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\ClassesWithoutPartialModifierOrAttribute.txt" />
+    <None Remove="Resources\ClassWithPartialModifierAndAttribute.txt" />
+    <None Remove="Resources\MultipleClassesWithPartialModifierAndAttribute.txt" />
+    <None Remove="Resources\MultipleNestedClasses.txt" />
+    <None Remove="Resources\NestedClassesWithoutPartialAndAttribute.txt" />
+    <None Remove="Resources\NestedClassesWithoutPartialWithAttribute.txt" />
+    <None Remove="Resources\NestedClassesWithPartial.txt" />
+    <None Remove="Resources\RoundReferencingClasses.txt" />
+    <None Remove="Resources\SelfReferencingClass.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ClassesWithoutPartialModifierOrAttribute.txt" />
+    <EmbeddedResource Include="Resources\ClassWithPartialModifierAndAttribute.txt" />
+    <EmbeddedResource Include="Resources\MultipleClassesWithPartialModifierAndAttribute.txt" />
+    <EmbeddedResource Include="Resources\MultipleNestedClasses.txt" />
+    <EmbeddedResource Include="Resources\NestedClassesWithoutPartialAndAttribute.txt" />
+    <EmbeddedResource Include="Resources\NestedClassesWithoutPartialWithAttribute.txt" />
+    <EmbeddedResource Include="Resources\NestedClassesWithPartial.txt" />
+    <EmbeddedResource Include="Resources\RoundReferencingClasses.txt" />
+    <EmbeddedResource Include="Resources\SelfReferencingClass.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.0" />
+    <PackageReference Include="Verify.Xunit" Version="17.9.0" />
+    <PackageReference Include="xunit" Version="2.4.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="3.1.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.3" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.3.0-3.final" PrivateAssets="all" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kros.SourceGenerators.PropertyAccessorsGenerator\Kros.SourceGenerators.PropertyAccessorsGenerator.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IsRoslynComponent>true</IsRoslynComponent>
+    <BuildOutputTargetFolder>analyzers</BuildOutputTargetFolder>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Property Accessors Generator</Title>
+    <Version>0.1.0</Version>
+    <Authors>Kros a.s.</Authors>
+    <Company>Kros a.s.</Company>
+    <Description>Source generator for enhancing classes with methods to access values of all their properties by name.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/Kros-sk/Kros.SourceGenerators.PropertyAccessors</RepositoryUrl>
+    <PackageTags>source-generators</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.3" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.3.0-3.final" PrivateAssets="all" />
+  </ItemGroup>
+</Project>

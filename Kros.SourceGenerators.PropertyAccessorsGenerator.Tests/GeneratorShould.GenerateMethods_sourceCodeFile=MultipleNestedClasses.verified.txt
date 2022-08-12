@@ -1,0 +1,110 @@
+﻿[  
+using System;
+
+namespace Kros.SourceGenerators
+{
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
+    public class PropertyValueProviderAttribute : Attribute
+    {
+    }
+}
+  
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Testing
+{
+    public partial class SampleClassB
+    {
+        public object GetPropertyValue(string propertyName)
+        {
+            switch (propertyName)
+            {
+                case nameof(DecimalProperty):
+                    return DecimalProperty;
+                case nameof(DateTimeProperty):
+                    return DateTimeProperty;
+                case nameof(DoubleProperty):
+                    return DoubleProperty;
+                case nameof(ClassProperty):
+                    return ClassProperty;
+                default:
+                    return null;
+            }
+        }
+
+        public Dictionary<string, object> GetAllPropertyValues() => new Dictionary<string, object>()
+        {[nameof(DecimalProperty)] = DecimalProperty, [nameof(DateTimeProperty)] = DateTimeProperty, [nameof(DoubleProperty)] = DoubleProperty, [nameof(ClassProperty)] = ClassProperty};
+    }
+}
+  
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Testing
+{
+    public partial class SampleClassE
+    {
+        public object GetPropertyValue(string propertyName)
+        {
+            switch (propertyName)
+            {
+                case nameof(DecimalProperty):
+                    return DecimalProperty;
+                case nameof(DateTimeProperty):
+                    return DateTimeProperty;
+                case nameof(DoubleProperty):
+                    return DoubleProperty;
+                default:
+                    return null;
+            }
+        }
+
+        public Dictionary<string, object> GetAllPropertyValues() => new Dictionary<string, object>()
+        {[nameof(DecimalProperty)] = DecimalProperty, [nameof(DateTimeProperty)] = DateTimeProperty, [nameof(DoubleProperty)] = DoubleProperty};
+    }
+}
+  
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Testing
+{
+    public partial class SampleClassA
+    {
+        public object GetPropertyValue(string propertyName, char delimiter = '.')
+        {
+            if (string.IsNullOrWhiteSpace(propertyName))
+            {
+                return null;
+            }
+
+            string[] propertyNameParts = propertyName.Split(delimiter);
+            string simplePropertyName = propertyNameParts.First();
+            string propertyNameRemainder = string.Join(delimiter, propertyNameParts.Skip(1));
+            switch (simplePropertyName)
+            {
+                case nameof(StringProperty):
+                    return StringProperty;
+                case nameof(IntProperty):
+                    return IntProperty;
+                case nameof(BoolProperty):
+                    return BoolProperty;
+                case nameof(ClassPropertyC):
+                    return ClassPropertyC;
+                case nameof(ClassPropertyD):
+                    return ClassPropertyD;
+                case nameof(ClassPropertyB):
+                    return string.IsNullOrWhiteSpace(propertyNameRemainder) ? ClassPropertyB : ClassPropertyB?.GetPropertyValue(propertyNameRemainder);
+                case nameof(ClassPropertyE):
+                    return string.IsNullOrWhiteSpace(propertyNameRemainder) ? ClassPropertyE : ClassPropertyE?.GetPropertyValue(propertyNameRemainder);
+                default:
+                    return null;
+            }
+        }
+
+        public Dictionary<string, object> GetAllPropertyValues() => new Dictionary<string, object>()
+        {[nameof(StringProperty)] = StringProperty, [nameof(IntProperty)] = IntProperty, [nameof(BoolProperty)] = BoolProperty, [nameof(ClassPropertyC)] = ClassPropertyC, [nameof(ClassPropertyD)] = ClassPropertyD, [nameof(ClassPropertyB)] = ClassPropertyB?.GetAllPropertyValues(), [nameof(ClassPropertyE)] = ClassPropertyE?.GetAllPropertyValues()};
+    }
+}
+]

@@ -1,0 +1,40 @@
+﻿[  
+using System;
+
+namespace Kros.SourceGenerators
+{
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
+    public class PropertyValueProviderAttribute : Attribute
+    {
+    }
+}
+  
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Testing
+{
+    public partial class SampleClassA
+    {
+        public object GetPropertyValue(string propertyName)
+        {
+            switch (propertyName)
+            {
+                case nameof(StringProperty):
+                    return StringProperty;
+                case nameof(IntProperty):
+                    return IntProperty;
+                case nameof(BoolProperty):
+                    return BoolProperty;
+                case nameof(ClassProperty):
+                    return ClassProperty;
+                default:
+                    return null;
+            }
+        }
+
+        public Dictionary<string, object> GetAllPropertyValues() => new Dictionary<string, object>()
+        {[nameof(StringProperty)] = StringProperty, [nameof(IntProperty)] = IntProperty, [nameof(BoolProperty)] = BoolProperty, [nameof(ClassProperty)] = ClassProperty};
+    }
+}
+]

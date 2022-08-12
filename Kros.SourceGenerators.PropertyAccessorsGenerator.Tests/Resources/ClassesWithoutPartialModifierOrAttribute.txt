@@ -1,0 +1,50 @@
+﻿using System;
+
+namespace Testing
+{
+	public partial class SampleClassA
+	{
+		public string StringProperty { get; set; }
+
+		public int IntProperty { get; set; }
+
+		public bool BoolProperty { get; set; }
+
+		public decimal DecimalProperty { get; set; }
+
+		public DateTime DateTimeProperty { get; set; }
+
+		public double DoubleProperty { get; set; }
+	}
+
+	[PropertyValueProvider]
+	public class SampleClassB
+	{
+		public string StringProperty { get; set; }
+
+		public int IntProperty { get; set; }
+
+		public bool BoolProperty { get; set; }
+
+		public decimal DecimalProperty { get; set; }
+
+		public DateTime DateTimeProperty { get; set; }
+
+		public double DoubleProperty { get; set; }
+	}
+
+	public class SampleClassC
+	{
+		public string StringProperty { get; set; }
+
+		public int IntProperty { get; set; }
+
+		public bool BoolProperty { get; set; }
+
+		public decimal DecimalProperty { get; set; }
+
+		public DateTime DateTimeProperty { get; set; }
+
+		public double DoubleProperty { get; set; }
+	}
+}
