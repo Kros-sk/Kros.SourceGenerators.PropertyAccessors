@@ -56,7 +56,7 @@ namespace Kros.SourceGenerators.PropertyAccessorsGenerator
         public static string GetNamespace(this CompilationUnitSyntax root)
             => root.ChildNodes()
                 .OfType<NamespaceDeclarationSyntax>()
-                .FirstOrDefault()
+                .FirstOrDefault()?
                 .Name
                 .ToString();
 
