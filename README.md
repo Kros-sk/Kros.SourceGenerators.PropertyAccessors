@@ -95,3 +95,4 @@ var newPerson = new Person()
 Console.WriteLine($"{newPerson.GetPropertyValue("Name")} lives in {newPerson.GetPropertyValue("Address/City", '/')} on {newPerson.GetPropertyValue("Address/Street", '/')}.");
 // "John Doe lives in New York on 5th Avenue."
 ```
+test
