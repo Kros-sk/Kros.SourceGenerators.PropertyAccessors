@@ -9,7 +9,7 @@ namespace Kros.SourceGenerators.PropertyAccessorsGenerator
     public static class GeneratorExecutionContextExtensions
     {
         private static readonly DiagnosticDescriptor _missingPartialModifier = new DiagnosticDescriptor(
-            id: "KROS001",
+            id: "KRPA001",
             title: "Missing partial modifier",
             messageFormat: "A partial modifier is required, property access methods will not be generated",
             category: "Kros.SourceGenerators.PropertyAccessors",
@@ -17,7 +17,7 @@ namespace Kros.SourceGenerators.PropertyAccessorsGenerator
             isEnabledByDefault: true);
 
         private static readonly DiagnosticDescriptor _missingPartialModifierOnProperty = new DiagnosticDescriptor(
-            id: "KROS002",
+            id: "KRPA002",
             title: "Missing partial modifier",
             messageFormat: "Some complex public properties are missing a partial modifier, which is required for property " +
                 "access methods to correctly support hierarchy",

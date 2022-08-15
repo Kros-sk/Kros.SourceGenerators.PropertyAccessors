@@ -135,10 +135,7 @@ namespace Kros.SourceGenerators
             ClassModel model,
             List<IPropertySymbol> simpleProperties,
             List<IPropertySymbol> complexProperties)
-        {
-            var sb = new StringBuilder();
-
-            sb.Append($@"
+            => $@"
             using System.Collections.Generic;
             using System.Linq;
 
@@ -151,10 +148,7 @@ namespace Kros.SourceGenerators
                         : GenerateGetPropertyValueMethodSimple(simpleProperties))}
                     {GenerateGetAllPropertyValuesMethod(simpleProperties, complexProperties)}
                 }}
-            }}");
-
-            return sb.ToString();
-        }
+            }}";
 
         private static string GenerateGetPropertyValueMethodSimple(List<IPropertySymbol> properties)
         {

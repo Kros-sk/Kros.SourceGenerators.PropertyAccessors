@@ -4,5 +4,5 @@
 ### New Rules
 Rule ID | Category | Severity | Notes
 --------|----------|----------|-------
-KROS001 | Kros.SourceGenerators.PropertyAccessors | Warning | GeneratorExecutionContextExtensions
-KROS002 | Kros.SourceGenerators.PropertyAccessors | Warning | GeneratorExecutionContextExtensions
+KRPA001 | Kros.SourceGenerators.PropertyAccessors | Warning | GeneratorExecutionContextExtensions
+KRPA002 | Kros.SourceGenerators.PropertyAccessors | Warning | GeneratorExecutionContextExtensions
